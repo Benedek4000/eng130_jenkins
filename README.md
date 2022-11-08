@@ -52,3 +52,12 @@ to JSON.
 - Buddy
 - TravisCI
 - etc
+
+## Instructions
+
+- create a new CI/CD pipeline
+- create new ssh keypair (in .ssh folder)
+- use naming convention `eng130_jenkins_[name]`
+- copy .pub to github repo
+- copy private key to Jenkins
+- create new job to test CI

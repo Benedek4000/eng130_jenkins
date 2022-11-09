@@ -55,6 +55,8 @@ to JSON.
 
 ## Instructions
 
+![jenkins-aws-github basic diagram](https://github.com/Benedek4000/eng130_jenkins/blob/main/images/jenkins-aws-github-basic.png)
+
 - create a new CI/CD pipeline
 - create new ssh keypair (in .ssh folder)
 - use naming convention `eng130_jenkins_[name]`
@@ -62,4 +64,4 @@ to JSON.
 - copy private key to Jenkins
 - create new job to test CI
 
-- 
+![jenkins-aws-github diagram](https://github.com/Benedek4000/eng130_jenkins/blob/main/images/jenkins-aws-github.png)

@@ -65,3 +65,23 @@ to JSON.
 - create new job to test CI
 
 ![jenkins-aws-github diagram](https://github.com/Benedek4000/eng130_jenkins/blob/main/images/jenkins-aws-github.png)
+
+### Connecting Jenkins-AWS-Github
+
+- allow access to jenkins in the instance's security groups
+- details for the CD job on jenkins:
+  - source code management -> git: enter repo url, add the ssh key
+  and specify branch
+  - build environment -> ssh agent: add aws key (.pem)
+  - build -> execute shell: enter commands, eg:
+
+```commandline
+rsync -avz -e "ssh -o StrictHostKeyChecking=no" app ubuntu@63.35.227.91:/home/ubuntu
+rsync -avz -e "ssh -o StrictHostKeyChecking=no" environment ubuntu@63.35.227.91:/home/ubuntu
+ssh -A -o "StrictHostKeyChecking=no" ubuntu@63.35.227.91 <<EOF
+    cd app
+    #bash provsion.sh
+    npm install
+    nohup node app.js > /dev/null 2>&1 &
+EOF 
+```

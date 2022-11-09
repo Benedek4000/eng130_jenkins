@@ -61,3 +61,5 @@ to JSON.
 - copy .pub to github repo
 - copy private key to Jenkins
 - create new job to test CI
+
+- 
